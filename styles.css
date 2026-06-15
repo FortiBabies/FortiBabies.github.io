@@ -277,7 +277,7 @@ hr{
     border-radius: 20px;
 }
 
-@media (max-width: 450px){
+@media (max-width: 1000px){
     .heading_text{
         font-size: 3.7rem;
     }
@@ -355,4 +355,78 @@ hr{
         justify-content: center; 
     }
 
+}
+
+@media (max-width: 500px){
+    .heading_text{
+        font-size: 3rem;
+    }
+
+    .welcome_section{
+        height: 50vw;
+    }
+
+    .adviser_image_container{
+        height: 30rem;
+    }
+
+    .adviser_text h2{
+        font-size: 3.7rem;
+    }
+
+    .adviser_text h3{
+        font-size: 2.5rem;
+    }
+
+    .class_section{
+        grid-template-columns: auto;
+        padding: 0 6rem;
+    }
+
+    .student{
+        grid-template-columns: auto;
+        margin: .5rem;
+    }
+
+    .student_picture img{
+        height: auto;
+        width: 100%;
+    }
+
+    .activities_section {
+        padding: 0 3rem;
+        /* Keep the main section grid intact so the fade stacking still works */
+    }
+
+    .activity {
+        /* Switch from 2 columns to 1 column */
+        grid-template-columns: 1fr; 
+    }
+
+    .activity_image_holder {
+        /* Force the image to the top of the grid cell slot */
+        grid-row: 1; 
+    }
+
+    .activity_text_holder {
+        /* Places text below the image (achieving your column-reverse effect) */
+        grid-row: 2; 
+        margin: 0;
+    }
+
+    .activity_text_holder h2 {
+        font-size: 3rem;
+    }
+
+    .activity_text_holder p {
+        font-size: 1.5rem;
+        font-weight: 200;
+    }
+
+    .activity_buttons {
+        margin-top: 1.5rem;
+        /* Centers the "Read More" button on mobile */
+        display: flex;
+        justify-content: center; 
+    }
 }
