@@ -3,19 +3,356 @@
     margin: 0;
     padding: 0;
 }
-html{
-    background-color: #111111;
-    color: white;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    overflow-y: hidden;
+
+:root{
+    font-size: 62.5%;
+    --light_dark: #1f1f1f;
 }
 
 body{
+    background-color: #111111;
+    color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+    width: 100vw;
+    font-size: 1.6rem;
+}
+
+footer{
+    background-color: var(--light_dark);
+    position: static;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    padding: 5px 0;
+}
+
+.heading_text{
+    font-size: 5rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1.1;
+    text-align: center;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+}
+
+header{
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h2{
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.logo_div{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    height: 100%;
+    padding: 1rem 2rem;
+}
+
+.logo_div img{
+    height: 100%;
+    border-radius: 1000px;
+    box-shadow: rgba(255, 255, 255, 0.555) 0px 0px 20px;
+}
+
+nav ul{
+   display: flex; 
+}
+
+nav ul li{
+    list-style: none;
+    margin: 1rem;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.welcome_section{
+    text-align: center;
     display: flex;
     flex-direction: column;
-    text-align: center;
-    font-size: 2vw;
+    align-items: center;
+    justify-content: center;
+    height: 40vw;
+    overflow: hidden;
+}
+
+.welcome_section img{
+    opacity: 50%;
+}
+
+.welcome_section_text_holder{
+    position: absolute;
+}
+
+.adviser_section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.adviser_image_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #7cce6b 0%, #007253 100%);
+    border-radius: 20px;
+    height: 40rem;
+    aspect-ratio: 3/3;
+    box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+}
+
+.adviser_image_wrapper{
+    width: 95%;
+    height: 95%;
+    background-color: var(--light_dark);
+    border-radius: 20px;
+    display: flex;
+    align-items: end;
+}
+
+.adviser_image_wrapper img{
+    height: 130%;
+}
+
+.adviser_text h2{
+    font-size: 6rem;
+}
+
+.adviser_text h3{
+    font-weight: 400;
+    font-size: 4.5rem;
+}
+
+.class_section{
+    width: 100%;
+    padding: 0rem 3rem;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.student{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    border-radius: 15px;
+    border: rgb(255, 255, 255) 2px solid;
+    background-color: var(--light_dark);
+    margin: 1rem;
+    height: min-content;
+    overflow: hidden;
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+}
+
+.student_info{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.student_info h3 span{
+    font-weight: 400;
+}
+
+.student_name{
+    font-size: 1.5rem;
+}
+
+.student_picture{
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+.student_picture img{
+    height: 100%;
+}
+
+.student_titles{
+    display: flex;
+    gap: 5px;
+}
+
+.student_title{
+    color: #7280ff;
+    width: max-content;
+    padding: 1px 7px 3px 7px;
+    border-radius: 20px;
+    border: #5a6af8 1px solid;
+}
+
+.added_title{
+    color: #ffcb3d;
+    border: #ffc526 1px solid;
+}
+
+hr{
+    margin-top: .5rem;
+}
+
+.virtual_room_tour{
+    padding: 0rem 3rem;
+}
+
+.virtual_room_tour_wrapper{
+    background-color: var(--light_dark);
+    border: solid white 2px;
+    border-radius: 15px;
+    height: 90vh;
+    display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+}
+
+.activities_section {
+    padding: 0 10rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    position: relative;
+}
+
+.activity {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    
+    /* Stack all activities on top of each other */
+    grid-column: 1;
+    grid-row: 1;
+    
+    /* Setup the fade effect */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+}
+
+/* This class will be toggled by JavaScript */
+.activity.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Your remaining styling stays identical */
+.activity_image_holder {
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    border-radius: 20px;
+}
+
+.activity_text_holder {
+    margin: 3rem 3rem 0 0;
+}
+
+.activity_text_holder h2 {
+    font-size: 5rem;
+}
+
+.activity_text_holder p {
+    font-size: 2.5rem;
+    font-weight: 200;
+}
+
+.activity_buttons {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: left;
+}
+
+.activity_buttons a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    background: linear-gradient(90deg, #4a923b 0%, #014432 100%);
+    padding: 1rem 2rem;
+    border-radius: 20px;
+}
+
+@media (max-width: 450px){
+    .heading_text{
+        font-size: 3.7rem;
+    }
+
+    .welcome_section{
+        height: 50vw;
+    }
+
+    .adviser_section{
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .adviser_image_container{
+        height: 30rem;
+    }
+
+    .adviser_text h2{
+        font-size: 3rem;
+    }
+
+    .adviser_text h3{
+        font-size: 2.5rem;
+    }
+
+    .class_section{
+        grid-template-columns: auto auto;
+    }
+
+    .student{
+        grid-template-columns: auto;
+        margin: .5rem;
+    }
+
+    .student_picture img{
+        height: auto;
+        width: 100%;
+    }
+
+    .activities_section {
+        padding: 0 3rem;
+        /* Keep the main section grid intact so the fade stacking still works */
+    }
+
+    .activity {
+        /* Switch from 2 columns to 1 column */
+        grid-template-columns: 1fr; 
+    }
+
+    .activity_image_holder {
+        /* Force the image to the top of the grid cell slot */
+        grid-row: 1; 
+    }
+
+    .activity_text_holder {
+        /* Places text below the image (achieving your column-reverse effect) */
+        grid-row: 2; 
+        margin: 0;
+    }
+
+    .activity_text_holder h2 {
+        font-size: 3rem;
+    }
+
+    .activity_text_holder p {
+        font-size: 1.5rem;
+        font-weight: 200;
+    }
+
+    .activity_buttons {
+        margin-top: 1.5rem;
+        /* Centers the "Read More" button on mobile */
+        display: flex;
+        justify-content: center; 
+    }
+
 }
